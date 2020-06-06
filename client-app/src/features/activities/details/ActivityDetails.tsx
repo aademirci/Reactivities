@@ -7,6 +7,7 @@ import ActivityDetailedHeader from './ActivityDetailedHeader'
 import ActivityDetailedInfo from './ActivityDetailedInfo'
 import ActivityDetailedChat from './ActivityDetailedChat'
 import ActivityDetailedSidebar from './ActivityDetailedSidebar'
+import { observer } from 'mobx-react-lite'
 
 interface DetailParams {
     id: string
@@ -38,4 +39,4 @@ const ActivityDetails: React.FC<RouteComponentProps<DetailParams>> = ({match, hi
     )
 }
 
-export default ActivityDetails
+export default observer(ActivityDetails)
