@@ -42,7 +42,7 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({ match, hist
         if (match.params.id) {
             setLoading(true)
             loadActivity(match.params.id).then((activity) => {
-                setActivity(activity)
+                setActivity(new ActivityFormValues(activity))
             }).finally(() => {
                 setLoading(false)})
         }
@@ -73,8 +73,8 @@ const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({ match, hist
                             <Field name='description' rows={3} placeholder='Description' value={activity.description} component={TextAreaInput} />
                             <Field name='category' placeholder='Category' value={activity.category} component={SelectInput} options={category} />
                             <Form.Group widths='equal'>
-                                <Field name='date' placeholder='Date' value={activity.date} component={DateInput} date={true} />
-                                <Field name='time' placeholder='Time' value={activity.time} component={DateInput} time={true} />
+                                <Field name='date' placeholder='Date' component={DateInput} date={true} value={activity.date} />
+                                <Field name='time' placeholder='Time' component={DateInput} time={true} value={activity.time} />
                             </Form.Group>
                             <Field name='city' placeholder='City' value={activity.city} component={TextInput} />
                             <Field name='venue' placeholder='Venue' value={activity.venue} component={TextInput} />

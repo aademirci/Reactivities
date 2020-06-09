@@ -45,10 +45,18 @@ const ProfilePhotos = () => {
                                                 positive 
                                                 content='Main'
                                             />
-                                            <Button name={photo.id} onClick={(e) => {
-                                                deletePhoto(photo)
-                                                setDeleteTarget(e.currentTarget.name)
-                                            }} loading={loading && deleteTarget === photo.id} disabled={photo.isMain} basic negative icon='trash' />
+                                            <Button 
+                                                name={photo.id}
+                                                onClick={(e) => {
+                                                    deletePhoto(photo)
+                                                    setDeleteTarget(e.currentTarget.name)
+                                                }} 
+                                                loading={loading && deleteTarget === photo.id} 
+                                                disabled={photo.isMain} 
+                                                basic 
+                                                negative 
+                                                icon='trash' 
+                                            />
                                         </Button.Group>
                                     }
                                 </Card>
